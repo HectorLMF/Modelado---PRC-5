@@ -1,0 +1,18 @@
+=== Informe del Experimento ===
+Fecha y hora: 2025-04-17_11-15
+Archivo de entrada: datasets/iris.csv
+Conjunto de entrenamiento guardado en: datasets/train_2025-04-17_11-15.csv
+Conjunto de prueba guardado en: datasets/test_2025-04-17_11-15.csv
+
+=== Parámetros de configuración ===
+Valor de k: 1
+Métrica de distancia utilizada: EuclideanDistance
+Estrategia de pesado de casos: String
+Regla de clasificación utilizada: String
+
+=== Matriz de confusión ===
+Precisión del modelo: 1.0
+	Iris-setosa	Iris-versicolor	Iris-virginica	
+Iris-setosa	32	0	0	
+Iris-versicolor	0	25	0	
+Iris-virginica	0	0	33	
