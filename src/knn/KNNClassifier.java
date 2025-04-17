@@ -53,6 +53,22 @@ public class KNNClassifier {
         this.k = k;
     }
 
+    public String getK() {
+        return String.valueOf(k);
+    }
+
+    public String getDistanceMetric() {
+       return distanceMetric.getClass().getSimpleName();
+    }
+
+    public String getClassificationRule() {
+        return rule.getClass().getSimpleName();
+    }
+
+    public String getCaseWeightingStrategy (){
+        return caseWeightingStrategy.getClass().getSimpleName();
+    }
+
     // Clase interna para almacenar un vecino y su distancia.
     private class Neighbor {
         Instance instance;

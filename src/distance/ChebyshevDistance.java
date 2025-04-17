@@ -31,4 +31,8 @@ public class ChebyshevDistance implements DistanceMetric {
         }
         return maxDiff;
     }
+
+    public String getMetricName() {
+        return "Chebyshev Distance";
+    }
 }

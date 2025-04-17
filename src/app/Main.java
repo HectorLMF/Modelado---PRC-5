@@ -123,8 +123,25 @@ public class Main {
         System.out.println("¿Desea ejecutar el módulo de experimentación? (s/n)");
         String expOption = scanner.nextLine().trim();
         if (expOption.equalsIgnoreCase("s")) {
-            System.out.println("Introduce el porcentaje para el conjunto de pruebas (ej.: 0.3 para 30%):");
-            float testRatio = scanner.nextFloat();
+
+            System.out.println("Introduce el porcentaje para el conjunto de pruebas (ej.: 0,3 para 30%):");
+
+            float testRatio = -1.0f; // Valor inicial inválido
+            while (true) {
+                if (scanner.hasNextFloat()) {  // Verificar si la entrada es un número válido
+                    testRatio = scanner.nextFloat();
+                    if (testRatio > 0 && testRatio <= 1) {  // Asegurarse de que el porcentaje esté dentro de un rango válido
+                        break;  // Salir del bucle si la entrada es correcta
+                    } else {
+                        System.out.println("Error: Ingresa un número entre 0 y 1 (ej.: 0.3 para 30%).");
+                    }
+                } else {
+                    System.out.println("Error: Entrada inválida. Ingresa un número válido.");
+                    scanner.next(); // Descarta la entrada incorrecta
+                }
+            }
+
+
             scanner.nextLine(); // Consumir salto de línea
             System.out.println("¿Generar splits aleatorios? (s/n):");
             String randomOption = scanner.nextLine().trim();
@@ -134,7 +151,7 @@ public class Main {
 
             ExperimentManager expManager = new ExperimentManager(dataset);
             expManager.splitDatasetRatio(testRatio, randomSplit, seed);
-            expManager.runExperiment(classifier);
+            expManager.runExperiment(classifier,filepath);
         }
 
         scanner.close();

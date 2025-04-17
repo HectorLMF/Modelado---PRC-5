@@ -30,5 +30,9 @@ public class EuclideanDistance implements DistanceMetric {
         }
         return (float) Math.sqrt(sum);
     }
+
+    public String getMetricName() {
+        return "Euclidean Distance";
+    }
 }
 

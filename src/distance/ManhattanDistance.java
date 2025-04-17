@@ -28,4 +28,7 @@ public class ManhattanDistance implements DistanceMetric {
         }
         return sum;
     }
+    public String getMetricName() {
+        return "Manhattan Distance";
+    }
 }
